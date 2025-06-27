@@ -57,30 +57,4 @@
 ## **Phase 3: Discord Webhook**  
 - Send a notification to a Discord channel for every operation executed via the CLI.  
 
----
 
-## **Phase 4: GitHub Action**  
-1. **Sanity Checks:**  
-   - Run linter, static checker, and unit tests on PRs.  
-2. **(Optional) Deployment Pipeline:**  
-   - Deploy AWS Lambda functions dynamically on code changes.  
-
----
-
-## **Side Task:**  
-1. **Presentation of `Behavioral Design Patterns` principles(MUST).**  
-2. **Understand SSR and CSR (MUST).**  
-
-
-
----
-
-## **Required Files**  
-These files are required for all future tasks as well:  
-- **Unit Testing:** Jest  
-- **Documentation:** TSDoc  
-- **ESLint + Prettier** for linting  
-- **`package.json` & `package-lock.json`** for dependencies  
-- **`tsconfig.json`** for TypeScript configurations  
-- **`serverless.yml`** for AWS Serverless deployments  
-- **`src/index.ts` & CLI handler files**  
