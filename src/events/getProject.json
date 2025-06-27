@@ -1,0 +1,6 @@
+{
+  "action": "get",
+  "payload": {
+    "projectId" : "my-new-discord-project"
+  }
+}

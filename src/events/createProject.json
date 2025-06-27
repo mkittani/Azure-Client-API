@@ -1,0 +1,8 @@
+{
+    "action": "create",
+    "payload": {
+      "name": "my-new-discord-project", 
+      "description": "This is a new project",
+      "visibility": "private"
+    }
+  }

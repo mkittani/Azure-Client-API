@@ -1,0 +1,8 @@
+{
+    "action": "create",
+    "payload": {
+      "title": "just to test discord", 
+      "description": "This is a test project",
+      "workItemType": "epic"
+    }
+  }

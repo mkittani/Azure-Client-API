@@ -1,0 +1,11 @@
+{
+    "action": "update",
+    "payload": {
+      "id": "11",
+      "updates": {
+        "title": "Updated Work Item Title",
+        "description": "Updated description for the work item."
+      }
+    }
+  }
+  

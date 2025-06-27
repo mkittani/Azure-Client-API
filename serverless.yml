@@ -1,0 +1,68 @@
+service: serverlesscliproject
+
+frameworkVersion: '3'
+
+useDotenv: true
+
+plugins:
+  - serverless-esbuild
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  environment:
+    SNS_TOPIC_ARN: ${env:SNS_TOPIC_ARN}
+    AZURE_ORG_URL: ${env:AZURE_ORG_URL}
+    AZURE_PROJECT: ${env:AZURE_PROJECT}
+    AZURE_API_VERSION: ${env:AZURE_API_VERSION}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - secretsmanager:GetSecretValue
+          Resource: "*" 
+        - Effect: Allow
+          Action:
+            - sns:Publish
+          Resource: "*"
+
+resources:
+  Resources:
+    MyDLQ:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: sns-dlq
+
+    MySNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${self:service}-topic-${sls:stage}
+
+functions:
+  azureProjectHandler:
+    handler: src/handlers/azureProjectHandler.handler
+    timeout: 30
+    memorySize: 256
+    events:
+      - sns:
+          arn: ${env:SNS_TOPIC_ARN}
+
+  azureWorkItemHandler:
+    handler: src/handlers/azureWorkItemHandler.handler
+    timeout: 30
+    memorySize: 256
+    events:
+      - sns:
+          arn: ${env:SNS_TOPIC_ARN}
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+    - README.md
+    - dist/**
