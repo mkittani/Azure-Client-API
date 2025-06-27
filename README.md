@@ -26,19 +26,7 @@ Welcome to the **Azure Client API**! This project is a cloud-native, serverless 
 - **Behavioral Design Patterns**: Clean, modular, and extensible codebase.
 - **Testing & Linting**: Jest for unit tests, ESLint + Prettier for code quality.
 
----
 
-## 📂 Project Structure
-
-```
-src/
-  handlers/         # Lambda entry points for Azure Project & Work Item operations
-  services/         # Business logic for Azure, AWS, SNS, etc.
-  schemas/          # Zod schemas for validation
-  utils/            # Utility functions (e.g., Discord notifier)
-  events/           # Example event payloads for testing
-  index.ts          # (Reserved for CLI entry point)
-```
 
 ---
 
@@ -64,7 +52,7 @@ See `src/events/` for ready-to-use JSON payloads for each operation.
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/Azure-Client-API.git
+git clone https://github.com/mkittani/Azure-Client-API.git
 cd Azure-Client-API
 npm install
 ```
@@ -112,12 +100,6 @@ You can invoke handlers locally using the Serverless Offline plugin or by sendin
 
 ---
 
-## 🧪 Testing & Quality
-- **Unit Testing**: Run `npm test` (Jest)
-- **Linting**: Run `npx eslint .`
-- **Formatting**: Run `npx prettier --check .`
-
----
 
 ## 🛡️ Security & Best Practices
 - **Secrets**: Azure API tokens are never hardcoded; always fetched securely from AWS Secrets Manager.
@@ -149,4 +131,4 @@ This project demonstrates behavioral design patterns such as Command, Observer (
 
 ## 🧙‍♂️ Contributing & License
 Pull requests are welcome! For major changes, please open an issue first. <br/>
-Licensed under the ISC License.
+Licensed under the MIS License.
