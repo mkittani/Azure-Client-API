@@ -27,6 +27,17 @@ Welcome to the **Azure Client API**! This project is a cloud-native, serverless 
 - **Testing & Linting**: Jest for unit tests, ESLint + Prettier for code quality.
 
 
+## 📂 Project Structure
+
+```
+src/
+  handlers/         # Lambda entry points for Azure Project & Work Item operations
+  services/         # Business logic for Azure, AWS, SNS, etc.
+  schemas/          # Zod schemas for validation
+  utils/            # Utility functions (e.g., Discord notifier)
+  events/           # Example event payloads for testing
+  index.ts          # (Reserved for CLI entry point)
+```
 
 ---
 
